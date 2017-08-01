@@ -2,7 +2,7 @@ component accessors = true {
 
     property ormService;
 
-    function authorize ( session ) {
+    public void function authorize ( session ) {
         variables.fw.renderData()
             .data( result )
             .type( "json" );
@@ -14,7 +14,7 @@ component accessors = true {
         }
     }
 
-    function authenticate ( form ) {
+    public void function authenticate ( form ) {
         var user = ormService.getByEmail();
     }
 

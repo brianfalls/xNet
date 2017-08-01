@@ -31,19 +31,14 @@ component extends="framework.one" output="false" {
     this.datasource       = "xnetdb";
     this.ormSettings      = {
         cfclocation       = "models",
-        dialect           = "MicrosoftSQLServer",
-        logSQL            = true,
-        flushAtRequestEnd = false,
-        autoManageSession = false,
-        eventHandling     = true,
-        eventHandler      = "cborm.models.EventHandler"
+        dialect           = "MicrosoftSQLServer"
     };
 
 	public void function setupSession() {  }
 
 	public void function setupRequest() {
-        controller( 'security.authenticate' );
-     }
+        controller( 'security.authorize' );
+    }
 
 	public void function setupView() {  }
 
