@@ -1,4 +1,5 @@
 component extends="framework.one" output="false" {
+
 	this.applicationTimeout = createTimeSpan(0, 2, 0, 0);
 	this.setClientCookies = true;
 	this.sessionManagement = true;
@@ -34,7 +35,9 @@ component extends="framework.one" output="false" {
         dialect           = "MicrosoftSQLServer"
     };
 
-	public void function setupSession() {  }
+	public void function setupSession() {
+        session.loggedIn = false;
+    }
 
 	public void function setupRequest() {
         controller( 'security.authorize' );
@@ -47,4 +50,5 @@ component extends="framework.one" output="false" {
 	public string function onMissingView(struct rc = {}) {
 		return "Error 404 - Page not found.";
 	}
+
 }

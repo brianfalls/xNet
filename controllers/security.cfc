@@ -1,13 +1,19 @@
 component name="auth" accessors="true" {
 
-    property securityService;
+    property framework;
+    property userEntityBean;
 
-    function authorize ( session ) {
-        securityService.authorize( session );
+    public void function authorize () {
+
+        if ( session.loggedIn ) {
+            variables.framework.renderdata( "json", "User Authorized" );
+        } else {
+            variables.framework.renderdata( "json", "User Failed Authorization" );
+        }
     }
 
-    function authenticate ( form ) {
-        securityService.authenticate( form );
+    public void function authenticate ( form ) {
+        var user = userEntityBean.getByEmail();
     }
 
 }
