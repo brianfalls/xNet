@@ -40,7 +40,13 @@ component extends="framework.one" output="false" {
     }
 
 	public void function setupRequest() {
-        controller( 'security.authorize' );
+
+        this.route = getRoute();
+
+        if ( this.route != "$GET/login" ) {
+            controller( 'security.authorize' );
+        }
+
     }
 
 	public void function setupView() {  }
