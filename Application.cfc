@@ -1,9 +1,10 @@
 component extends="framework.one" output="false" {
 
+    this.name = 'NAGR-xNet';
 	this.applicationTimeout = createTimeSpan(0, 2, 0, 0);
 	this.setClientCookies = true;
 	this.sessionManagement = true;
-	this.sessionTimeout = createTimeSpan(0, 0, 30, 0);
+	this.sessionTimeout = createTimeSpan(0, 2, 0, 0);
 
 	// FW/1 settings
 	variables.framework = {
@@ -16,7 +17,8 @@ component extends="framework.one" output="false" {
 		diComponent = "framework.ioc",
 		diLocations = "model, controllers",
         diConfig = { },
-        routes = [ ]
+        routes = [ ],
+        trace = true
 	};
 
     this.datasources["xnetdb"] = {
@@ -35,18 +37,16 @@ component extends="framework.one" output="false" {
         dialect           = "MicrosoftSQLServer"
     };
 
+    public void function setupApplication() {
+        application.adminEmail = 'webmaster@nagrhq.org';
+    }
+
 	public void function setupSession() {
-        session.loggedIn = false;
+        controller( 'security.session' );
     }
 
 	public void function setupRequest() {
-
-        this.path = getRoutePath();
-
-        if ( this.path != "$GET/login/" ) {
-            controller( 'security.authorize' );
-        }
-
+        controller( 'security.authorize' );
     }
 
 	public void function setupView() {  }

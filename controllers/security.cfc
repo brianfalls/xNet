@@ -1,19 +1,27 @@
-component name="auth" accessors="true" {
+component {
 
-    property framework;
-    property userEntityBean;
-
-    public void function authorize () {
-
-        if ( session.loggedIn ) {
-            variables.framework.renderdata( "json", "User Authorized" );
-        } else {
-            variables.framework.redirect( action = 'login' );
-        }
+    function init( fw ) {
+        variables.fw = fw;
     }
 
-    public void function authenticate ( form ) {
-        var user = userEntityBean.getByEmail();
+    function session( rc ) {
+
+        session.auth = {};
+        session.auth.isLoggedIn = false;
+        session.auth.fullname = 'Guest';
+
+    }
+
+    function authorize( rc ) {
+
+        if  ( not (StructKeyExists(session, "auth") && session.auth.isLoggedIn)
+                && !ListFindNoCase('login', variables.fw.getSection())
+                && !ListFindNoCase('main.error', variables.fw.getFullyQualifiedAction())
+            )
+            {
+            variables.fw.redirect('login');
+        }
+
     }
 
 }
