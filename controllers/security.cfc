@@ -8,7 +8,7 @@ component name="auth" accessors="true" {
         if ( session.loggedIn ) {
             variables.framework.renderdata( "json", "User Authorized" );
         } else {
-            variables.framework.renderdata( "json", "User Failed Authorization" );
+            variables.framework.redirect( action = 'login' );
         }
     }
 

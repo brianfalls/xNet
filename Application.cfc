@@ -10,7 +10,7 @@ component extends="framework.one" output="false" {
 		action = 'action',
 		defaultSection = 'main',
 		defaultItem = 'default',
-		generateSES = false,
+		generateSES = true,
 		SESOmitIndex = false,
 		diEngine = "di1",
 		diComponent = "framework.ioc",
@@ -41,9 +41,9 @@ component extends="framework.one" output="false" {
 
 	public void function setupRequest() {
 
-        this.route = getRoute();
+        this.path = getRoutePath();
 
-        if ( this.route != "$GET/login" ) {
+        if ( this.path != "$GET/login/" ) {
             controller( 'security.authorize' );
         }
 
