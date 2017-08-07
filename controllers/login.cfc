@@ -15,9 +15,6 @@ component accessors=true {
 
     function login( rc ) {
 
-        writeDump("kilroy");
-        abort;
-
         if ( !StructKeyExists(rc, "email") || !StructKeyExists(rc, "password") ) {
             variables.fw.redirect( "login" );
         }

@@ -4,7 +4,7 @@ component extends="framework.one" output="false" {
 	this.applicationTimeout = createTimeSpan(0, 2, 0, 0);
 	this.setClientCookies = true;
 	this.sessionManagement = true;
-	this.sessionTimeout = createTimeSpan(0, 2, 0, 0);
+	this.sessionTimeout = createTimeSpan(0, 0, 15, 0);
 
 	// FW/1 settings
 	variables.framework = {

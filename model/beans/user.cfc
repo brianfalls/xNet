@@ -10,7 +10,7 @@ component persistent = true {
     property name = "passwordSalt"  column = "passwordSalt";
     property name = "userRole"      column = "userRole";
 
-    public void function init(
+    function init(
         string UserID = 0,
         string userName = "",
         string firstName = "",
@@ -21,7 +21,7 @@ component persistent = true {
         string passwordSalt = "",
         string userRole = ""
         ) {
-            variables.id = UserID;
+            variables.UserID = UserID;
             variables.userName = username;
             variables.firstName = firstName;
             variables.lastName = lastName;

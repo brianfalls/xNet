@@ -1,13 +1,43 @@
 component accessors = true {
 
-    function init( any beanFactory ) {
+    function init ( any beanFactory ) {
         variables.beanFactory = beanFactory;
-        variables.users = ormstuffhere;
+        variables.users = {};
+
+        var user = variables.beanFactory.getBean( "userBean" );
+            user.setId();
+            user.setUserName();
+            user.setFirstName();
+            user.setLastName();
+            user.setEmail();
+            user.setIsActive();
+            user.setUserRole();
+            user.setPasswordHash();
+            user.setPasswordSalt();
+
+        var passwordHashSalt = hashPassword();
+
+        variables.user[user.getId()] = user;
 
         return this;
+
+    }
+
+    function get ( string id ) {
+
+        var result = 0;
+
+        if (len( id ) && StructKeyExists( variables.users, id )) {
+            result = variables.users[ id ];
+        } else {
+            result = variables.beanFactory.getBean( "userBean" );
+        }
+
+        return result;
     }
 
     function getByEmail( string email ) {
+
         var result = "";
 
         if ( len(email) ){
@@ -24,6 +54,12 @@ component accessors = true {
         }
 
         return result;
+
+    }
+
+    function getAll () {
+
+        return variables.users;
 
     }
 
