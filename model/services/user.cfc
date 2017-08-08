@@ -1,25 +1,11 @@
 component accessors = true {
 
     function init ( any beanFactory ) {
-        variables.beanFactory = beanFactory;
-
+        variables.beanFactory = arguments.beanFactory;
         var user = variables.beanFactory.getBean( "userBean" );
-            user.setUserId();
-            user.setUserName();
-            user.setFirstName();
-            user.setLastName();
-            user.setEmail();
-            user.setIsActive();
-            user.setPasswordHash();
-            user.setPasswordSalt();
-            user.setUserRole();
-
         var passwordHashSalt = hashPassword();
-
         variables.user[user.getId()] = user;
-
         return this;
-
     }
 
     function get ( string id ) {

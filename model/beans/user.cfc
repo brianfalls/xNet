@@ -1,6 +1,6 @@
 component persistent = true {
 
-    property name = "UserID"        column = "UserID" fieldtype = "id" generator = "native";
+    property name = "UserID"        column = "UserID"        fieldtype = "id" generator = "native";
     property name = "userName"      column = "userName";
     property name = "firstName"     column = "firstName";
     property name = "lastName"      column = "lastName";
