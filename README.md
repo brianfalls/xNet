@@ -2,8 +2,9 @@
 
 Requirements:
   - Github and Git Bash
-  ⋅⋅* https://desktop.github.com/ ⋅⋅* github core
-  ⋅⋅* https://git-for-windows.github.io/ ⋅⋅* git bash
+
+  ⋅⋅* https://desktop.github.com/
+  ⋅⋅* https://git-for-windows.github.io/
   - CommandBox
   ⋅⋅* https://www.ortussolutions.com/products/commandbox
 
