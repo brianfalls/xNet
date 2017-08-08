@@ -1,18 +1,18 @@
 #NAGR xNet
 
 Requirements:
-    - Github and Git Bash
-    ⋅⋅* https://desktop.github.com/ ⋅⋅* github core
-    ⋅⋅* https://git-for-windows.github.io/ ⋅⋅* git bash
-    - CommandBox
-    ⋅⋅* https://www.ortussolutions.com/products/commandbox
+  - Github and Git Bash
+  ⋅⋅* https://desktop.github.com/ ⋅⋅* github core
+  ⋅⋅* https://git-for-windows.github.io/ ⋅⋅* git bash
+  - CommandBox
+  ⋅⋅* https://www.ortussolutions.com/products/commandbox
 
 To clone from Github:
-    - Fork this repo to your personal Github
-    ⋅⋅* https://github.com/nagrorg/xNet
-    - Open Git Bash and cd to the directory you'd like to keep these files
-    - type the command: git clone https://github.com/[yourGithub]/xNet
-    - cd into xNet
+  - Fork this repo to your personal Github
+  ⋅⋅* https://github.com/nagrorg/xNet
+  - Open Git Bash and cd to the directory you'd like to keep these files
+  - type the command: git clone https://github.com/[yourGithub]/xNet
+  - cd into xNet
 
 To run:
   - install CommandBox
