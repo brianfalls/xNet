@@ -19,7 +19,7 @@ component {
                 && !ListFindNoCase('main.error', variables.fw.getFullyQualifiedAction())
             )
             {
-            variables.fw.redirect('login');
+            // variables.fw.redirect('login');
         }
 
     }
