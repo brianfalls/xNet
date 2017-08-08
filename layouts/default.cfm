@@ -10,6 +10,7 @@
             <p style="font-family: courier;">session.auth.isLoggedIn: <cfoutput>#session.auth.isLoggedIn#</cfoutput></p>
 			<h2><cfoutput>#cgi.path_info#</cfoutput></h2>
 			<div><cfoutput>#body#</cfoutput></div>
+            <a href="index.cfm/login">Login</a>
 		</div>
 	</body>
 </html>
