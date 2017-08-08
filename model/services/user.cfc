@@ -3,8 +3,7 @@ component accessors = true {
     function init ( any beanFactory ) {
         variables.beanFactory = arguments.beanFactory;
         var user = variables.beanFactory.getBean( "userBean" );
-        var passwordHashSalt = hashPassword();
-        variables.user[user.getId()] = user;
+        variables.user[user.getUserId()] = user;
         return this;
     }
 
